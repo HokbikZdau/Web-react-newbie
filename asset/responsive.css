@@ -1,0 +1,90 @@
+@media (max-width: 1023px) {
+    .hero {
+        min-height: 440px;
+    }
+    .nav_bar-btn {
+        opacity: 1;
+        display: block;
+    }
+    .header .container {
+        display: none;
+    }
+    .hero-main{
+        transform: translateY(140px);
+    }
+    .hero-main h1 {
+        font-size: 2.8rem;
+        line-height: 54px;
+        padding: 0 180px;
+    }
+    .hero-main .quote {
+        left: 23rem;
+    }
+    .section {
+        padding: 16px 43px; /* Giảm padding hơn nữa */
+    }
+    .section .container .list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .section .container .list .list-image {
+        height: 100%; /* Tăng chiều cao để thẻ lớn hơn khi có 2 cột */
+    }
+    .section .container .list .list-image:last-child {
+        display: none;
+    }
+}
+
+@media (max-width: 860px) {
+    .hero .header .hero-main h1 {
+        font-size: 14px;
+    }
+    .section {
+        padding: 8px 16px; /* Giảm padding hơn nữa */
+    }
+    .section .container .list {
+        grid-template-columns: 1fr;
+    }
+    .section .container .list .list-image {
+        height: 400px; /* Tăng chiều cao để thẻ lớn hơn khi có 1 cột */
+    }
+}
+
+@media (max-width: 600px) {
+    .hero-main {
+        align-items: center
+    }
+    .hero-main h1 {
+        width: 100%;
+        text-align: center;
+        align-items: center;
+        font-size: 1.8rem;
+        line-height: 34px;
+        padding: 0 32px;
+    }
+    .section .container .list .list-image {
+        height: 280px; /* Tăng chiều cao để thẻ lớn hơn khi có 2 cột */
+    }
+}
+
+@media (max-width: 320px) {
+    .hero {
+        height: 40px;
+    }
+    .hero-main h1 {
+        padding: 0 32px;
+        font-size: 1.5rem;
+        line-height: 30px;
+    }
+    .hero-main .quote {
+        left: 2rem;
+    }
+    .section {
+        padding: 8px 16px; /* Giảm padding hơn nữa */
+    }
+    .section .container .list {
+        grid-template-columns: 1fr;
+    }
+    .section .container .list .list-image {
+        height: 200px; /* Tăng chiều cao để thẻ lớn hơn khi có 1 cột */
+    }
+}

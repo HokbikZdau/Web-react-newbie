@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Template Versus</title>
+    <link rel="website icon" type="png" href="../public/icon-logo-removebg-preview.png">
+    <link rel="stylesheet" href="./asset/styles.css">
+    <link rel="stylesheet" href="./asset/responsive.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"> 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+</head>
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+    
+    const inf = [
+    {
+        id:1,
+        title:"Music Player",
+        image:"./public/id_1.jpeg",
+    },
+    {
+        id:2,
+        title:"Console App",
+        image:"./public/id_2.png",
+    },
+    {
+        id:3,
+        title:"Baseball Infographic",
+        image:"./public/id_3.jpeg",
+    },
+    {
+        id:4,
+        title:"Powerwall App",
+        image:"./public/id_4.png",
+    },
+    {
+        id:5,
+        title:"Music App",
+        image:"./public/id_5.jpeg",
+    },
+    {
+        id:6,
+        title:"Photo App Icon",
+        image:"./public/id_6.png",
+    },
+    {
+        id:7,
+        title:"News Feed",
+        image:"./public/id_7.png",
+    },
+    {
+        id:8,
+        title:"Camera App",
+        image:"./public/id_8.jpeg",
+    },
+    {
+        id:9,
+        title:"Material exploration",
+        image:"./public/id_9.jpg",
+    }
+];
+
+
+        function Navbar() {
+            return (
+                <div className="header">
+                    <div className="container">
+                        <div className="logo">vernus</div>
+                        <div className="nav">
+                            <a href="#">portfolio</a>
+                            <a href="#">about</a>
+                            <a href="#">contact</a>
+                            <a href="#">suport</a>
+                            <a href="#">report</a>
+                        </div>   
+                    </div>
+                
+                    <label for="nav-moblie-input" className="nav_bar-btn">
+                        <i class="fa-solid fa-bars"></i>
+                    </label>
+
+                    <input type="checkbox" name="" className="nav__input" id="nav-moblie-input"/>
+
+                    <div className="container-mobile">
+                        <label for="nav-moblie-input" class="nav__mobile-close">
+                            <i class="fa-solid fa-xmark"></i>
+                        </label>
+                        <div className="logo-mobile">vernus</div>
+                        <div className="nav-moblie">
+                            <a href="#">portfolio</a>
+                            <a href="#">about</a>
+                            <a href="#">contact</a>
+                            <a href="#">suport</a>
+                            <a href="#">report</a>
+                        </div>   
+                    </div>
+
+                    <label for="nav-moblie-input" className="nav_ovelay"></label>
+                </div>
+            );
+        }
+
+        function Hero() {
+            return (
+                <div className="hero-main">
+                    <h1>We build beautiful web and mobile apps</h1>
+                    <a className="quote-btn" href="#">GET A QUOTE</a>
+                </div>
+            );
+        }
+
+        function img({ href, onClick}) {
+            let Component = "img"
+            const props = []
+
+            if (href) {
+                props.href=href
+            }
+
+            if (onClick) {
+                props.onClick=onClick
+            }
+
+            return <Component {...props}></Component>
+        }
+
+        function Section() {
+            return (
+                <div className="container">
+                    <h2>Latest Work</h2>
+                    <div className="list">
+                        {inf.map((value, index) => (
+                            <div key={index} className="list-image">
+                                <img src={value.image} alt={value.title} />
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            );
+        }
+
+
+        function Footer() {
+            return(
+                <div>
+                    <h2 className="footer-logo">VERSUS</h2>
+                    <p className="footer-create">Powered by Webflow</p>
+                </div>
+            )
+        }
+
+        function App() {
+            return (
+                <React.Fragment>
+                    <div className="hero">
+                        <Navbar/>
+                        <Hero/>
+                    </div>
+                    <div className="section">
+                        <Section/>
+                    </div>
+                    <div class="footer">
+                        <Footer/>
+                    </div>
+                </React.Fragment>
+            );
+        }
+
+
+
+        ReactDOM.render(<App />, document.getElementById("root"));
+
+    </script>
+</body>
+</html>
